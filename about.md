@@ -16,13 +16,13 @@ blah.
 
     <div class="row-fluid">
         <div class="span5">
-            Karl Broman<br/>
-            <a href="https://www.biostat.wisc.edu">blah &amp; Medical Informatics</a><br/>
-            <a href="https://www.wisc.edu">blah</a><br/>
-            <a href="https://map.wisc.edu/s/2tie3nen">blah</a><br/>
-            425 Henry Mall<br/>
+            Viv<br/>
+<!--             <a href="https://www.biostat.wisc.edu">blah &amp; Medical Informatics</a><br/> -->
+<!--             <a href="https://www.wisc.edu">blah</a><br/> -->
+<!--             <a href="https://map.wisc.edu/s/2tie3nen">blah</a><br/> -->
+<!--             425 Henry Mall<br/>
             Madison, Wisconsin 53706<br/>
-            USA<br/><br/>
+            USA<br/><br/> -->
 
           
         </div>
