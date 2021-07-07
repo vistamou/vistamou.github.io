@@ -9,7 +9,7 @@ description: blah blah
       <ul class="nav">
           <li><a href="{{ BASE_PATH }}/viv_cv.pdf">cv</a></li>
           <li><a href="https://github.com/vistamou">github</a></li>
-          <li><a href="https://kbroman.org/blog">blog</a></li>
+          <li><a href="https://vistamou.github.io/blog">blog</a></li>
 <!--           <li><a href="https://twitter.com/kwbroman">@kwbroman</a></li> -->
       </ul>
   </div>
