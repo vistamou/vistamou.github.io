@@ -34,3 +34,4 @@ Usage:
     {% endfor %}
   {% endif %}
 {% endif %}
+{% assign categories_list = nil %}
