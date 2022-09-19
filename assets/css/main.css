@@ -2405,7 +2405,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #20626B;
+			background-color: #0065a1;
 			color: #ffffff !important;
 		}
 
