@@ -1,141 +1,827 @@
-
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="description" content="Vivian Stamou, PhD" />
-  <meta name="author" content="Vivian Stamou, PhD" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="assets/css/academicons.css" />
+  <meta charset="UTF-8">
+
+  <title>The Blackbox Project — Vivian Stamou</title>
+
+  <meta name="description" content="The Blackbox Project — an interdisciplinary art installation exploring gender bias in Artificial Intelligence.">
+  <meta name="author" content="Vivian Stamou">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-  <!-- Add Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Noto+Serif|Roboto+Mono" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Add Highlight JS -->
-  <script src="assets/js/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <link rel="stylesheet" href="assets/css/highlightjs/atom-one-light.css">
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118198513-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700&family=Caveat:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    function gtag() {
-      dataLayer.push(arguments);
+  <style>
+
+    :root {
+      --cobalt: #1E3FA0;
+      --paper: #F3EEE1;
+      --paper-2: #ECE4D2;
+      --burgundy: #6E1423;
+      --raspberry: #C81E59;
+      --mustard: #E8B23B;
+      --ink: #17130F;
+      --cream-txt: #FBF7EE;
     }
-    gtag('js', new Date());
-    gtag('config', 'UA-118198513-1');
-  </script>
-  <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Space Mono", monospace;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* --------------------------------
+       HEADER
+    -------------------------------- */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--paper);
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .header-inner {
+      max-width: 1500px;
+      margin: auto;
+      padding: 16px 34px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .wordmark {
+      font-family: "Bodoni Moda", serif;
+      font-size: 27px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .wordmark span {
+      font-family: "Space Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      margin-left: 8px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-size: 18px;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--raspberry);
+      transition: width 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--raspberry);
+    }
+
+    .nav a:hover::after {
+      width: 100%;
+    }
+
+    /* --------------------------------
+       HERO
+    -------------------------------- */
+
+    .hero {
+      background: var(--cobalt);
+      color: var(--cream-txt);
+      border-bottom: 2px solid var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px),
+        radial-gradient(circle at 70% 60%, #fff 1px, transparent 1px);
+
+      background-size: 18px 18px, 25px 25px;
+      opacity: 0.08;
+    }
+
+    .hero-inner {
+      max-width: 1450px;
+      margin: auto;
+      padding: 100px 7vw 110px;
+
+      position: relative;
+    }
+
+    .eyebrow {
+      font-family: "Caveat", cursive;
+      color: var(--mustard);
+      font-size: 30px;
+      transform: rotate(-2deg);
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Bodoni Moda", serif;
+      font-size: clamp(60px, 9vw, 130px);
+      line-height: 0.86;
+      letter-spacing: -0.07em;
+      font-weight: 500;
+      margin: 0;
+      max-width: 1000px;
+    }
+
+    .hero-description {
+      max-width: 850px;
+      margin-top: 45px;
+
+      font-family: "Bodoni Moda", serif;
+      font-size: 28px;
+      line-height: 1.3;
+    }
+
+    .hero-note {
+      margin-top: 35px;
+      color: var(--mustard);
+      font-family: "Caveat", cursive;
+      font-size: 25px;
+      transform: rotate(-2deg);
+    }
+
+    /* --------------------------------
+       MAIN
+    -------------------------------- */
+
+    section {
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 40px;
+    }
+
+    .section-label {
+      font-family: "Caveat", cursive;
+      color: var(--raspberry);
+      font-size: 30px;
+      transform: rotate(-1deg);
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-family: "Bodoni Moda", serif;
+      font-weight: 500;
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      margin: 0 0 45px;
+    }
+
+    /* --------------------------------
+       INTRO
+    -------------------------------- */
+
+    .intro {
+      background: var(--paper-2);
+    }
+
+    .intro-text {
+      max-width: 1000px;
+      font-family: "Bodoni Moda", serif;
+      font-size: 27px;
+      line-height: 1.38;
+    }
+
+    .team {
+      margin-top: 60px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .team-card {
+      border: 2px solid var(--ink);
+      padding: 28px;
+      background: var(--paper);
+    }
+
+    .team-card h3 {
+      font-family: "Bodoni Moda", serif;
+      font-size: 28px;
+      margin: 0 0 20px;
+    }
+
+    .team-card p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    /* --------------------------------
+       PROJECT GENESIS
+    -------------------------------- */
+
+    .genesis-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .genesis-image {
+      background: var(--raspberry);
+      padding: 15px;
+      border: 2px solid var(--ink);
+      transform: rotate(-1.5deg);
+    }
+
+    .genesis-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: 2px solid var(--ink);
+    }
+
+    .genesis-list {
+      border-top: 2px solid var(--ink);
+    }
+
+    .genesis-list-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--ink);
+      font-size: 14px;
+    }
+
+    .genesis-list-item::before {
+      content: "↳ ";
+      color: var(--raspberry);
+    }
+
+    /* --------------------------------
+       BLACKBOX CONCEPT
+    -------------------------------- */
+
+    .concept {
+      background: var(--ink);
+      color: var(--cream-txt);
+    }
+
+    .concept .section-label {
+      color: var(--mustard);
+    }
+
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .concept-text {
+      font-family: "Bodoni Moda", serif;
+      font-size: 29px;
+      line-height: 1.35;
+    }
+
+    .concept-image {
+      background: var(--paper);
+      padding: 14px;
+      border: 2px solid var(--cream-txt);
+      transform: rotate(2deg);
+    }
+
+    .concept-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .image-caption {
+      color: var(--ink);
+      padding-top: 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    /* --------------------------------
+       EXHIBITIONS
+    -------------------------------- */
+
+    .exhibitions {
+      background: var(--mustard);
+    }
+
+    .exhibition-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .exhibition-image {
+      background: var(--paper);
+      border: 2px solid var(--ink);
+      padding: 14px;
+      transform: rotate(-2deg);
+    }
+
+    .exhibition-image img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    .exhibition-text {
+      font-family: "Bodoni Moda", serif;
+      font-size: 42px;
+      line-height: 1.05;
+    }
+
+    .exhibition-note {
+      font-family: "Caveat", cursive;
+      font-size: 28px;
+      margin-top: 30px;
+      transform: rotate(-2deg);
+    }
+
+    /* --------------------------------
+       BACK LINK
+    -------------------------------- */
+
+    .back-section {
+      background: var(--paper);
+    }
+
+    .back-link {
+      display: inline-block;
+      border: 2px solid var(--ink);
+      padding: 14px 22px;
+      text-decoration: none;
+      background: var(--paper-2);
+      transition: 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: var(--raspberry);
+      color: var(--cream-txt);
+      transform: translate(-2px, -2px);
+    }
+
+    /* --------------------------------
+       FOOTER
+    -------------------------------- */
+
+    footer {
+      padding: 25px 40px;
+      background: var(--paper);
+      font-size: 11px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    footer a {
+      text-decoration: underline;
+    }
+
+    /* --------------------------------
+       MOBILE
+    -------------------------------- */
+
+    @media (max-width: 1000px) {
+
+      .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .genesis-grid,
+      .concept-grid,
+      .exhibition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 800px) {
+
+      .header-inner {
+        padding: 14px 20px;
+      }
+
+      .wordmark {
+        font-size: 23px;
+      }
+
+      .nav {
+        gap: 14px;
+      }
+
+      .nav a {
+        font-size: 15px;
+      }
+
+      .hero-inner {
+        padding: 75px 25px 85px;
+      }
+
+      .hero h1 {
+        font-size: clamp(58px, 17vw, 90px);
+      }
+
+      .hero-description {
+        font-size: 23px;
+      }
+
+      .section {
+        padding: 70px 25px;
+      }
+
+      .intro-text {
+        font-size: 22px;
+      }
+
+      .concept-text {
+        font-size: 23px;
+      }
+
+      .exhibition-text {
+        font-size: 34px;
+      }
+
+      footer {
+        padding: 20px 25px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-  <!-- Header -->
-  <section id="header">
-    <header>
-      <!-- <span class="image avatar"><img src="images/avatar.jpg" alt="" /></span> -->
-      <h1 id="logo"><a href="#">Vivian Stamou</a></h1>
-      <p>Natural Language Processing Researcher<br>The Blackbox Team</p>
-    </header>
-    <nav id="nav">
-      <ul>
-        <li><a href="index.html#one">About</a></li>
-        <li><a href="index.html#two">Academics</a></li>
-        <li><a href="index.html#three">Publications</a></li>
-        <li><a href="index.html#four">Media</a></li>
-        <li><a href="index.html#five">Installations</a></li>
-      </ul>
-    </nav>
-    <footer>
-      <ul class="icons">
-        <li><a href="https://github.com/vistamou" class="icon fa-github" target="_blank"><span class="label">Github</span></a></li>
-        <li><a href="mailto:vivianstamou@gmail.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
-        <li><a href="https://twitter.com/vivstamou" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-      </ul>
-    </footer>
-  </section>
 
-  <!-- Wrapper -->
-  <div id="wrapper">
+  <!-- HEADER -->
 
-    <!-- Main -->
-    <div id="main">
+  <header class="site-header">
 
-      <div class="container">
+    <div class="header-inner">
 
+      <a href="index.html" class="wordmark">
+        VIVIAN STAMOU
+        <span>PhD / NLP</span>
+      </a>
 
-        <header>
-          <h3>The Blackbox Project</h3>
-	  <p>  <b> Mihaela Dobreva, Tea Rukavina, Vivian Stamou, Anastasia Nefeli Vidaki and Lida Zacharopoulou </b> </p>
-          <p> <b>An interdisciplinary art installation exploring gender bias in Artificial Intelligence. Are AI algorithms biased? 
-	     Why are many women (self-)excluded from the STEAM fields and the discussions around AI?
-Inspired by our own shared experiences of discrimination in the workplace, this project is the outcome of the international collaboration of five young female professionals, researchers, and artists, united by a common passion for technology and AI.
-Drawing from the definition of the black box as a complex system whose internal workings are hidden or not readily understood, the exhibition invites guests to enter a physical maze and walk through various aspects of gender bias,
-		  presented using storytelling and AI algorithms such as facial recognition and text-to-image generators.</b></p>
-        </header>
+      <nav class="nav">
 
+        <a href="index.html#about">About</a>
+        <a href="index.html#research">Research</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#publications">Publications</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#talks">Talks</a>
+        <a href="index.html#press">Press</a>
+        <a href="index.html#contact">Contact</a>
 
-
-        <h4>Project Genesis</h4>
-          <div class="row">
-  		<div class="column">
-    			<span class="image fit"><img src="images/women_ai-modified.png", style="width: 300px; height: 300px; alt="" /></span>
-  		</div>
-  		
-  	 	 	<ul>
-				<li><b>Michaela Dobreva, Digital Arts</b></li>
- 		
-    				<li><b>Tea Rukavina, Computational Mechanicanics/Data Science </b></li>
-  		
-    				<li><b>Vivian Stamou, Natural Language Processing</b></li>
-  		
-    				<li><b>Anastasia Nefeli Vidaki, AI Law </b></li>
-  		
-    				<li><b>Lida Zacharopoulou, Data analytics/Creative Coding</b></p></li>
-			</ul>
-  		</div>
-	
-
-<!--            <span class="image fit"><img src="images/women_ai-modified.png", style="width: 400px; height: 400px; alt="" /></span>
- -->
-              <p>The Blackbox concept</p>
-	      <span class="image fit"><img src="images/Image13.jpg" , style="width: 300px; height: 300px; alt="" /></span>
-
-              <p>Exhibitions</p>
-	      <span class="image fit"><img src="images/da_fest.jpg", style="width: 300px; height: 300px; alt="" /></span>
-
-
-      <!-- Footer -->
-      <section id="footer">
-        <div class="container">
-          <ul class="copyright">
-            <li>&copy; Vivian Stamou </li>
-            <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-          </ul>
-        </div>
-      </section>
+      </nav>
 
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollzer.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="assets/js/main.js"></script>
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        PROJECT / ART + AI + GENDER
+      </div>
+
+      <h1>
+        The<br>
+        Blackbox<br>
+        Project
+      </h1>
+
+      <div class="hero-description">
+
+        An interdisciplinary art installation exploring gender bias in Artificial Intelligence.
+
+      </div>
+
+      <div class="hero-note">
+        What happens when the black box becomes a place we can enter?
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- INTRODUCTION -->
+
+  <section class="intro">
+
+    <div class="section">
+
+      <div class="section-label">
+        01 / the project
+      </div>
+
+      <h2>
+        The Blackbox Project
+      </h2>
+
+      <p class="intro-text">
+
+        Mihaela Dobreva, Tea Rukavina, Vivian Stamou, Anastasia Nefeli Vidaki and Lida Zacharopoulou
+
+      </p>
+
+      <p class="intro-text">
+
+        An interdisciplinary art installation exploring gender bias in Artificial Intelligence.
+        Are AI algorithms biased?
+        Why are many women (self-)excluded from the STEAM fields and the discussions around AI?
+
+      </p>
+
+      <p class="intro-text">
+
+        Inspired by our own shared experiences of discrimination in the workplace, this project is the outcome
+        of the international collaboration of five young female professionals, researchers, and artists,
+        united by a common passion for technology and AI.
+
+      </p>
+
+      <p class="intro-text">
+
+        Drawing from the definition of the black box as a complex system whose internal workings are hidden
+        or not readily understood, the exhibition invites guests to enter a physical maze and walk through
+        various aspects of gender bias, presented using storytelling and AI algorithms such as facial recognition
+        and text-to-image generators.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECT GENESIS -->
+
+  <section>
+
+    <div class="section">
+
+      <div class="section-label">
+        02 / project genesis
+      </div>
+
+      <h2>
+        Five perspectives.<br>
+        One black box.
+      </h2>
+
+      <div class="genesis-grid">
+
+        <div class="genesis-image">
+
+          <img
+            src="images/women_ai-modified.png"
+            alt="The Blackbox Project team">
+
+        </div>
+
+
+        <div class="genesis-list">
+
+          <div class="genesis-list-item">
+            <strong>Michaela Dobreva</strong> — Digital Arts
+          </div>
+
+          <div class="genesis-list-item">
+            <strong>Tea Rukavina</strong> — Computational Mechanics / Data Science
+          </div>
+
+          <div class="genesis-list-item">
+            <strong>Vivian Stamou</strong> — Natural Language Processing
+          </div>
+
+          <div class="genesis-list-item">
+            <strong>Anastasia Nefeli Vidaki</strong> — AI Law
+          </div>
+
+          <div class="genesis-list-item">
+            <strong>Lida Zacharopoulou</strong> — Data Analytics / Creative Coding
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BLACKBOX CONCEPT -->
+
+  <section class="concept">
+
+    <div class="section">
+
+      <div class="section-label">
+        03 / the concept
+      </div>
+
+      <h2>
+        The Blackbox concept
+      </h2>
+
+      <div class="concept-grid">
+
+        <div class="concept-text">
+
+          Drawing from the definition of the black box as a complex system
+          whose internal workings are hidden or not readily understood,
+          the exhibition invites guests to enter a physical maze and
+          experience different aspects of gender bias in AI.
+
+        </div>
+
+        <div class="concept-image">
+
+          <img
+            src="images/Image13.jpg"
+            alt="The Blackbox concept">
+
+          <div class="image-caption">
+            fig. 02 — The Blackbox concept
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- EXHIBITIONS -->
+
+  <section class="exhibitions">
+
+    <div class="section">
+
+      <div class="section-label">
+        04 / exhibitions
+      </div>
+
+      <h2>
+        Exhibitions
+      </h2>
+
+      <div class="exhibition-grid">
+
+        <div class="exhibition-image">
+
+          <img
+            src="images/da_fest.jpg"
+            alt="The Blackbox Project exhibition">
+
+        </div>
+
+        <div>
+
+          <div class="exhibition-text">
+
+            Storytelling, artificial intelligence,
+            facial recognition and text-to-image generation.
+
+          </div>
+
+          <div class="exhibition-note">
+            From the algorithmic black box → to a physical space.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- BACK -->
+
+  <section class="back-section">
+
+    <div class="section">
+
+      <a href="index.html#projects" class="back-link">
+        ← Back to Projects &amp; Installations
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        © Vivian Stamou
+      </div>
+
+      <div>
+        The Blackbox Project
+      </div>
+
+    </div>
+
+  </footer>
+
 
 </body>
-
 </html>
