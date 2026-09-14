@@ -1,0 +1,2075 @@
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Vivian Stamou, PhD</title>
+
+<meta
+  name="description"
+  content="Personal website of Vivian Stamou, PhD — Postdoctoral Researcher in Natural Language Processing."
+>
+
+<meta
+  name="keywords"
+  content="Natural Language Processing, Computational Linguistics, NLP, Linguistics, Athena Research Center"
+>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,700;1,6..96,400&family=Space+Mono:wght@400;700&family=Caveat:wght@500;600&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ============================================================
+   VIVIAN STAMOU — EDITORIAL ACADEMIC WEBSITE
+   Inspired by the Plateia AI visual language
+   ============================================================ */
+
+:root{
+
+  --cobalt:#1E3FA0;
+  --paper:#F3EEE1;
+  --paper-2:#ECE4D2;
+
+  --burgundy:#6E1423;
+  --raspberry:#C81E59;
+  --mustard:#E8B23B;
+
+  --ink:#17130F;
+  --cream:#FBF7EE;
+
+  --serif:"Bodoni Moda","Times New Roman",serif;
+  --mono:"Space Mono","Courier New",monospace;
+  --hand:"Caveat",cursive;
+
+  --line:1px solid var(--ink);
+
+  --max:1200px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  margin:0;
+
+  background:var(--paper);
+
+  color:var(--ink);
+
+  font-family:var(--serif);
+
+  -webkit-font-smoothing:antialiased;
+}
+
+a{
+  color:inherit;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+::selection{
+  background:var(--raspberry);
+  color:var(--cream);
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.site-head{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  padding:18px 28px;
+
+  background:var(--paper);
+
+  border-bottom:var(--line);
+}
+
+.wordmark{
+
+  font-family:var(--serif);
+
+  font-size:18px;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  letter-spacing:.02em;
+}
+
+.wordmark span{
+
+  color:var(--raspberry);
+
+  font-style:italic;
+}
+
+.site-nav{
+
+  display:flex;
+
+  gap:24px;
+}
+
+.site-nav a{
+
+  font-family:var(--mono);
+
+  font-size:10px;
+
+  text-decoration:none;
+
+  padding-bottom:3px;
+
+  border-bottom:1px solid transparent;
+}
+
+.site-nav a:hover{
+
+  border-bottom-color:var(--raspberry);
+}
+
+.site-stamp{
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  letter-spacing:.08em;
+
+  opacity:.55;
+}
+
+@media(max-width:800px){
+
+  .site-nav{
+    display:none;
+  }
+
+  .site-head{
+    padding:15px 18px;
+  }
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+.hero{
+
+  position:relative;
+
+  min-height:88vh;
+
+  overflow:hidden;
+
+  background:var(--cobalt);
+
+  color:var(--cream);
+
+  padding:
+    clamp(50px,8vw,100px)
+    clamp(24px,7vw,90px)
+    60px;
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1fr)
+    300px;
+
+  gap:60px;
+
+  align-items:center;
+}
+
+
+/* paper grain */
+
+.hero::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  pointer-events:none;
+
+  opacity:.07;
+
+  background-image:
+    radial-gradient(
+      circle at 1px 1px,
+      white 1px,
+      transparent 1px
+    );
+
+  background-size:5px 5px;
+}
+
+.hero-copy{
+
+  position:relative;
+
+  z-index:2;
+}
+
+.hero-kicker{
+
+  margin:0 0 18px;
+
+  font-family:var(--hand);
+
+  font-size:clamp(20px,2.5vw,30px);
+
+  color:var(--mustard);
+
+  transform:rotate(-2deg);
+}
+
+.hero-title{
+
+  margin:0;
+
+  max-width:850px;
+
+  font-size:
+    clamp(
+      55px,
+      9vw,
+      125px
+    );
+
+  line-height:.86;
+
+  font-weight:500;
+
+  letter-spacing:-.025em;
+}
+
+.hero-title em{
+
+  font-style:italic;
+
+  font-weight:400;
+}
+
+.hero-subtitle{
+
+  margin:35px 0 0;
+
+  max-width:530px;
+
+  font-size:clamp(18px,2vw,25px);
+
+  line-height:1.35;
+}
+
+.hero-rule{
+
+  width:220px;
+
+  height:3px;
+
+  background:var(--raspberry);
+
+  margin-top:14px;
+
+  transform:rotate(-1deg);
+}
+
+
+/* portrait */
+
+.hero-portrait{
+
+  position:relative;
+
+  z-index:2;
+
+  transform:rotate(2deg);
+}
+
+.hero-portrait img{
+
+  width:100%;
+
+  border:1px solid var(--cream);
+
+  filter:grayscale(100%);
+
+  background:var(--paper);
+}
+
+.portrait-caption{
+
+  margin-top:9px;
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  color:var(--mustard);
+
+  text-align:right;
+}
+
+.hero-note{
+
+  position:absolute;
+
+  right:35px;
+
+  bottom:28px;
+
+  z-index:3;
+
+  font-family:var(--hand);
+
+  font-size:22px;
+
+  color:var(--mustard);
+
+  transform:rotate(-4deg);
+}
+
+.hero-index{
+
+  position:absolute;
+
+  bottom:18px;
+
+  left:30px;
+
+  z-index:3;
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  opacity:.7;
+}
+
+@media(max-width:800px){
+
+  .hero{
+
+    min-height:auto;
+
+    grid-template-columns:1fr;
+
+    padding-top:65px;
+  }
+
+  .hero-portrait{
+
+    max-width:230px;
+  }
+
+  .hero-note{
+    display:none;
+  }
+}
+
+
+/* ============================================================
+   INTRO / ABOUT
+   ============================================================ */
+
+.editorial-section{
+
+  padding:
+    90px
+    clamp(24px,7vw,90px);
+
+  border-bottom:var(--line);
+}
+
+.section-heading{
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  border-bottom:var(--line);
+
+  padding-bottom:14px;
+
+  margin-bottom:45px;
+}
+
+.section-heading h2{
+
+  margin:0;
+
+  font-size:
+    clamp(
+      38px,
+      5vw,
+      62px
+    );
+
+  line-height:.9;
+
+  font-weight:500;
+}
+
+.section-number{
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  opacity:.55;
+}
+
+.about-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,700px)
+    1fr;
+
+  gap:70px;
+}
+
+.about-text{
+
+  margin:0;
+
+  font-size:
+    clamp(
+      23px,
+      3vw,
+      38px
+    );
+
+  line-height:1.18;
+}
+
+.about-side{
+
+  align-self:end;
+
+  font-family:var(--mono);
+
+  font-size:10px;
+
+  line-height:1.7;
+
+  opacity:.65;
+}
+
+.actions{
+
+  display:flex;
+
+  gap:10px;
+
+  margin-top:35px;
+}
+
+.button{
+
+  display:inline-block;
+
+  padding:11px 18px;
+
+  border:1px solid var(--ink);
+
+  font-family:var(--mono);
+
+  font-size:10px;
+
+  text-decoration:none;
+
+  transition:.2s ease;
+}
+
+.button:hover{
+
+  background:var(--ink);
+
+  color:var(--cream);
+}
+
+@media(max-width:800px){
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ============================================================
+   RESEARCH
+   ============================================================ */
+
+.research-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:22px;
+}
+
+.research-card{
+
+  min-height:300px;
+
+  padding:25px;
+
+  border:var(--line);
+
+  position:relative;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+}
+
+.research-card:nth-child(1){
+
+  background:var(--raspberry);
+
+  color:var(--cream);
+
+  transform:rotate(-.5deg);
+}
+
+.research-card:nth-child(2){
+
+  background:var(--paper-2);
+
+  transform:rotate(.5deg);
+}
+
+.research-card:nth-child(3){
+
+  background:var(--burgundy);
+
+  color:var(--cream);
+
+  transform:rotate(-.4deg);
+}
+
+.research-label{
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  letter-spacing:.05em;
+
+  opacity:.7;
+}
+
+.research-card h3{
+
+  margin:30px 0 12px;
+
+  font-size:32px;
+
+  line-height:.98;
+
+  font-weight:500;
+}
+
+.research-card p{
+
+  margin:0;
+
+  font-size:15px;
+
+  line-height:1.45;
+}
+
+.research-mark{
+
+  font-family:var(--hand);
+
+  font-size:25px;
+
+  margin-top:25px;
+
+  opacity:.8;
+}
+
+@media(max-width:850px){
+
+  .research-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ============================================================
+   EXPERIENCE / EDUCATION
+   ============================================================ */
+
+.timeline{
+
+  max-width:950px;
+}
+
+.timeline-row{
+
+  display:grid;
+
+  grid-template-columns:
+    150px
+    1fr;
+
+  gap:35px;
+
+  padding:24px 0;
+
+  border-bottom:var(--line);
+}
+
+.timeline-date{
+
+  font-family:var(--mono);
+
+  font-size:10px;
+
+  opacity:.6;
+}
+
+.timeline-title{
+
+  margin:0 0 5px;
+
+  font-size:23px;
+
+  font-weight:500;
+}
+
+.timeline-description{
+
+  margin:0;
+
+  font-size:15px;
+
+  line-height:1.45;
+}
+
+.subheading{
+
+  margin:55px 0 0;
+
+  font-family:var(--hand);
+
+  font-size:30px;
+
+  font-weight:500;
+
+  transform:rotate(-1deg);
+}
+
+@media(max-width:650px){
+
+  .timeline-row{
+
+    grid-template-columns:1fr;
+
+    gap:8px;
+  }
+}
+
+
+/* ============================================================
+   PUBLICATIONS
+   ============================================================ */
+
+.publication-list{
+
+  max-width:1050px;
+}
+
+.publication{
+
+  display:grid;
+
+  grid-template-columns:
+    55px
+    1fr;
+
+  gap:20px;
+
+  padding:25px 0;
+
+  border-bottom:var(--line);
+}
+
+.publication-number{
+
+  font-family:var(--mono);
+
+  font-size:10px;
+
+  opacity:.45;
+}
+
+.publication p{
+
+  margin:0;
+
+  font-size:17px;
+
+  line-height:1.45;
+}
+
+.publication strong{
+
+  font-weight:500;
+}
+
+.publication a{
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  text-decoration:none;
+
+  color:var(--raspberry);
+}
+
+.publication a:hover{
+
+  text-decoration:underline;
+}
+
+.publication:nth-child(3n){
+
+  background:var(--paper-2);
+
+  padding-left:15px;
+
+  padding-right:15px;
+}
+
+
+/* ============================================================
+   PROJECTS
+   ============================================================ */
+
+.project-feature{
+
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,1.1fr)
+    minmax(0,.9fr);
+
+  gap:45px;
+
+  align-items:center;
+
+  max-width:1050px;
+}
+
+.project-image{
+
+  border:var(--line);
+
+  transform:rotate(-1deg);
+
+  background:var(--paper-2);
+}
+
+.project-image img{
+
+  width:100%;
+}
+
+.project-copy h3{
+
+  margin:0 0 18px;
+
+  font-size:
+    clamp(
+      35px,
+      5vw,
+      60px
+    );
+
+  line-height:.9;
+
+  font-weight:500;
+}
+
+.project-copy p{
+
+  font-size:17px;
+
+  line-height:1.5;
+}
+
+.project-note{
+
+  margin-top:25px;
+
+  font-family:var(--hand);
+
+  font-size:24px;
+
+  color:var(--raspberry);
+
+  transform:rotate(-2deg);
+}
+
+@media(max-width:800px){
+
+  .project-feature{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ============================================================
+   TALKS / PRESS
+   ============================================================ */
+
+.entry-list{
+
+  max-width:850px;
+}
+
+.entry{
+
+  padding:20px 0;
+
+  border-bottom:var(--line);
+
+  display:grid;
+
+  grid-template-columns:
+    55px
+    1fr;
+
+  gap:20px;
+}
+
+.entry-number{
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  opacity:.5;
+}
+
+.entry p{
+
+  margin:0;
+
+  font-size:18px;
+
+  line-height:1.4;
+}
+
+.entry em{
+
+  font-style:italic;
+}
+
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+
+.contact{
+
+  background:var(--ink);
+
+  color:var(--cream);
+
+  padding:
+    90px
+    clamp(24px,7vw,90px);
+}
+
+.contact .section-heading{
+
+  border-bottom-color:rgba(251,247,238,.5);
+}
+
+.contact .section-number{
+
+  color:var(--yellow);
+}
+
+.contact-content{
+
+  max-width:700px;
+}
+
+.contact-content p{
+
+  margin:0;
+
+  font-size:
+    clamp(
+      25px,
+      3vw,
+      40px
+    );
+
+  line-height:1.2;
+}
+
+.contact-links{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:20px;
+
+  margin-top:40px;
+}
+
+.contact-links a{
+
+  font-family:var(--mono);
+
+  font-size:11px;
+
+  text-decoration:none;
+
+  color:var(--yellow);
+
+  border-bottom:1px solid transparent;
+}
+
+.contact-links a:hover{
+
+  border-bottom-color:var(--yellow);
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer{
+
+  background:var(--paper);
+
+  padding:
+    30px
+    clamp(24px,7vw,90px)
+    50px;
+
+  border-top:var(--line);
+}
+
+.footer-grid{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+.footer-copy{
+
+  font-size:13px;
+
+  line-height:1.4;
+}
+
+.footer-meta{
+
+  font-family:var(--mono);
+
+  font-size:9px;
+
+  opacity:.55;
+
+  text-align:right;
+}
+
+@media(max-width:650px){
+
+  .footer-grid{
+    flex-direction:column;
+  }
+
+  .footer-meta{
+    text-align:left;
+  }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+
+<header class="site-head">
+
+  <a href="#about" class="wordmark">
+    VIVIAN <span>STAMOU</span>
+  </a>
+
+  <nav class="site-nav">
+
+    <a href="#about">About</a>
+
+    <a href="#research">Research</a>
+
+    <a href="#experience">Experience</a>
+
+    <a href="#publications">Publications</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#talks">Talks</a>
+
+    <a href="#press">Press</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+  <span class="site-stamp">
+    NLP / ATHENS / 2026
+  </span>
+
+</header>
+
+
+
+<main>
+
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+
+<section class="hero">
+
+  <div class="hero-copy">
+
+    <p class="hero-kicker">
+      computational linguistics / language / AI
+    </p>
+
+    <h1 class="hero-title">
+
+      Vivian<br>
+
+      Stamou,<br>
+
+      <em>PhD.</em>
+
+    </h1>
+
+    <p class="hero-subtitle">
+
+      Postdoctoral Researcher in Natural Language Processing
+      at Archimedes AI, Athena Research Center.
+
+    </p>
+
+    <div class="hero-rule"></div>
+
+  </div>
+
+
+  <div class="hero-portrait">
+
+    <img
+      src="images/avatar.jpg"
+      alt="Portrait of Vivian Stamou"
+    >
+
+    <span class="portrait-caption">
+      fig. 01 — researcher / linguist
+    </span>
+
+  </div>
+
+
+  <span class="hero-note">
+    language, resources &amp; AI
+  </span>
+
+  <span class="hero-index">
+    01 / 2026
+  </span>
+
+</section>
+
+
+
+<!-- ============================================================
+     ABOUT
+     ============================================================ -->
+
+<section id="about" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>About</h2>
+
+    <span class="section-number">
+      01 — PROFILE
+    </span>
+
+  </div>
+
+
+  <div class="about-grid">
+
+    <div>
+
+      <p class="about-text">
+
+        I am a postdoctoral researcher in Natural Language Processing
+        at Archimedes AI (Athena Research Center), working at the
+        intersection of computational linguistics and language resources.
+        My work focuses on building and curating linguistic datasets,
+        advancing tools for under-resourced languages, and studying
+        bias and harmful language in AI systems.
+
+      </p>
+
+
+      <div class="actions">
+
+        <a
+          href="pdf/CV.pdf"
+          class="button"
+          target="_blank"
+          rel="noopener"
+        >
+          CV
+        </a>
+
+        <a href="#contact" class="button">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="about-side">
+
+      <strong>Research areas</strong>
+
+      <br><br>
+
+      computational linguistics<br>
+      natural language processing<br>
+      language resources<br>
+      treebanks<br>
+      low-resource languages<br>
+      harmful language<br>
+      AI bias
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     RESEARCH
+     ============================================================ -->
+
+<section id="research" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>Research Focus</h2>
+
+    <span class="section-number">
+      02 — QUESTIONS
+    </span>
+
+  </div>
+
+
+  <div class="research-grid">
+
+
+    <article class="research-card">
+
+      <div>
+
+        <span class="research-label">
+          01 — LANGUAGE RESOURCES
+        </span>
+
+        <h3>
+          Low-resource<br>
+          languages
+        </h3>
+
+        <p>
+          Treebank creation, morphological annotation,
+          and UD resources.
+        </p>
+
+      </div>
+
+      <span class="research-mark">
+        language / data / structure
+      </span>
+
+    </article>
+
+
+    <article class="research-card">
+
+      <div>
+
+        <span class="research-label">
+          02 — SAFETY
+        </span>
+
+        <h3>
+          Lexicons<br>
+          for safety
+        </h3>
+
+        <p>
+          Offensive language detection and multilingual
+          lexicon development.
+        </p>
+
+      </div>
+
+      <span class="research-mark">
+        words can hurt
+      </span>
+
+    </article>
+
+
+    <article class="research-card">
+
+      <div>
+
+        <span class="research-label">
+          03 — AI / SOCIETY
+        </span>
+
+        <h3>
+          Multimodality<br>
+          &amp; AI bias
+        </h3>
+
+        <p>
+          Human-centered analysis of AI systems
+          and media installations.
+        </p>
+
+      </div>
+
+      <span class="research-mark">
+        looking at the machine
+      </span>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     EXPERIENCE & EDUCATION
+     ============================================================ -->
+
+<section id="experience" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>Experience &amp; Education</h2>
+
+    <span class="section-number">
+      03 — TIMELINE
+    </span>
+
+  </div>
+
+
+  <h3 class="subheading">
+    Experience
+  </h3>
+
+
+  <div class="timeline">
+
+    <div class="timeline-row">
+
+      <div class="timeline-date">
+        2024 — present
+      </div>
+
+      <div>
+
+        <h4 class="timeline-title">
+          Postdoctoral Researcher
+        </h4>
+
+        <p class="timeline-description">
+          Archimedes AI, Athena Research Center
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <h3 class="subheading">
+    Education
+  </h3>
+
+
+  <div class="timeline">
+
+    <div class="timeline-row">
+
+      <div class="timeline-date">
+        2019 — 2023
+      </div>
+
+      <div>
+
+        <h4 class="timeline-title">
+          PhD
+        </h4>
+
+        <p class="timeline-description">
+          Department of Philology (Linguistics),
+          University of Athens
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-row">
+
+      <div class="timeline-date">
+        2015 — 2017
+      </div>
+
+      <div>
+
+        <h4 class="timeline-title">
+          M.Sc. in Computational Linguistics
+        </h4>
+
+        <p class="timeline-description">
+          University of Stuttgart (IMS)
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="timeline-row">
+
+      <div class="timeline-date">
+        2010 — 2015
+      </div>
+
+      <div>
+
+        <h4 class="timeline-title">
+          B.A. in Linguistics
+        </h4>
+
+        <p class="timeline-description">
+          University of Athens
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PUBLICATIONS
+     ============================================================ -->
+
+<section id="publications" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>Publications</h2>
+
+    <span class="section-number">
+      04 — SELECTED WORK
+    </span>
+
+  </div>
+
+
+  <div class="publication-list">
+
+
+    <article class="publication">
+
+      <span class="publication-number">01</span>
+
+      <p>
+        <strong>Arampatzakis, V., Stamou, V., &amp; Markantonatou, S.</strong>
+        2026. Exploring Active Learning Approaches in Treebank Development.
+        <em>Transforming Heritage Research in a Transforming World:
+        5th CAA-GR Conference 2024.</em> Springer Nature.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">02</span>
+
+      <p>
+        <strong>Vakirtzian, S., Stamou, V., Kazos, Y., &amp; Markantonatou, S.</strong>
+        2025. Dialectal treebanks and their relation with the standard variety:
+        The case of East Cretan and Standard Modern Greek.
+        <em>Proceedings of NoDaLiDa/Baltic-HLT 2025</em>, 776–784.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">03</span>
+
+      <p>
+        <strong>Markantonatou, S., Stamou, V., Bompolas, S.,
+        Anastasopoulou, K., Vasileiadi, I. L., Diamantopoulos, K.,
+        Kazos, Y., &amp; Anastasopoulos, A.</strong>
+        2025. VMWE identification with models trained on GUD.
+        <em>Proceedings of the 21st Workshop on Multiword Expressions</em>,
+        14–20.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">04</span>
+
+      <p>
+        <strong>Markantonatou, S., Stamou, V., Bompolas, S.,
+        Anastasopoulou, K., Vasileiadi-Linardaki, I.,
+        Diamantopoulos, K., &amp; Kazos, Y.</strong>
+        2025. GUD: a new Modern Greek treebank enriched with VMWE annotations.
+        <em>UniDive 3rd General Meeting, Budapest.</em>
+
+        <br><br>
+
+        <a href="pdf/Poster_Unidive-3.pdf"
+           target="_blank"
+           rel="noopener">
+          [POSTER]
+        </a>
+
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">05</span>
+
+      <p>
+        <strong>Vakirtzian, S., Tsoukala, C., Bompolas, S.,
+        Mouzou, K., Stamou, V., Paraskevopoulos, G., Dimakis, A.,
+        Markantonatou, S., Ralli, A., &amp; Anastasopoulos, A.</strong>
+        2024. Speech Recognition for Greek Dialects:
+        A Challenging Benchmark.
+        <em>Proc. Interspeech 2024</em>, 3974–3978.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">06</span>
+
+      <p>
+        <strong>Markantonatou, S., Stamou, V., Christodoulou, C.,
+        Apostolopoulou, G., Balas, A., &amp; Ioannakis, G.</strong>
+        2024. The Corpus AIKIA: Using Ranking Annotation for Offensive
+        Language Detection in Modern Greek.
+        <em>LREC-COLING 2024</em>, 15861–15871.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">07</span>
+
+      <p>
+        <strong>Stamou, V., Mikros, G., Markopoulos, G., &amp; Varlokosta, S.</strong>
+        2024. Establishing control corpora for depression detection in Modern Greek:
+        Methodological insights.
+        <em>Resources and ProcessIng of linguistic, para-linguistic and
+        extra-linguistic Data</em>, 68–76.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">08</span>
+
+      <p>
+        <strong>Dobreva, M., Rukavina, T., Stamou, V.,
+        Vidaki, A. N., &amp; Zacharopoulou, L.</strong>
+        2023. A Multimodal Installation Exploring Gender Bias in Artificial Intelligence.
+        <em>International Conference on Human-Computer Interaction</em>,
+        27–46. Springer.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">09</span>
+
+      <p>
+        <strong>Basile, V., Markantonatou, S., Stamou, V.,
+        Alexiou, I., Apostolopoulou, G., Archonti, V., Balas, A.,
+        Koutli, E., &amp; Panagiotopoulou, M.</strong>
+        2023. Using HurtLex and Best-Worst Scaling to Develop ERIS:
+        A Lexicon for Offensive Language Detection.
+        <em>News Media and Hate Speech Promotion in Mediterranean Countries</em>,
+        32–49. IGI Global.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">10</span>
+
+      <p>
+        <strong>Markantonatou, S., Constantinides, N. Th., Stamou, V.,
+        Arampatzakis, V., Krimpas, P. G., &amp; Pavlidis, G.</strong>
+        2023. Methodological issues regarding the semi-automatic UD treebank
+        creation of under-resourced languages: the case of Pomak.
+        <em>Proceedings of the Sixth Workshop on Universal Dependencies</em>,
+        27–35.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">11</span>
+
+      <p>
+        <strong>Stamou, V., Alexiou, I., Klimi, A., Molou, E.,
+        Saivanidou, A., &amp; Markantonatou, S.</strong>
+        2022. Cleansing &amp; expanding the HURTLEX (el) with a multidimensional
+        categorization of offensive words.
+        <em>Proceedings of the Sixth Workshop on Online Abuse and Harms</em>,
+        102–108.
+
+        <br><br>
+
+        <a href="pdf/Poster_WOAH-3.pdf"
+           target="_blank"
+           rel="noopener">
+          [POSTER]
+        </a>
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">12</span>
+
+      <p>
+        <strong>Karahóǧa, R. J., Krimpas, P. G., Stamou, V.,
+        Arampatzakis, V., Karamatskos, D., Sevetlidis, V.,
+        Constantinides, N., Kokkas, N., Pavlidis, G.,
+        &amp; Markantonatou, S.</strong>
+        2022. Morphologically annotated corpora of Pomak.
+        <em>Proceedings of the Fifth Workshop on the Use of Computational
+        Methods in the Study of Endangered Languages</em>, 179–186.
+
+        <br><br>
+
+        <a href="pdf/Poster_Computel-2.pdf"
+           target="_blank"
+           rel="noopener">
+          [POSTER]
+        </a>
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">13</span>
+
+      <p>
+        <strong>Stamou, V., Xylogianni, A., Malli, M., Takorou, P.,
+        &amp; Markantonatou, S.</strong>
+        2020. VMWE discovery: a comparative analysis between Literature
+        and Twitter Corpora.
+        <em>Proceedings of the Joint Workshop on Multiword Expressions
+        and Electronic Lexicons</em>, 66–72.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">14</span>
+
+      <p>
+        <strong>Markantonatou, S., Toraki, K., Minos, P.,
+        Vacalopoulou, A., Stamou, V., &amp; Pavlidis, G.</strong>
+        2021. AMAA Λ EIA: A Dish-Driven Ontology in the Food Domain.
+        <em>Data</em>, 6(4), 41. MDPI.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">15</span>
+
+      <p>
+        <strong>Markantonatou, S., Toraki, K., Stamou, V.,
+        &amp; Pavlidis, G.</strong>
+        2021. The semantic and syntactic ingredients of Greek dish names:
+        Are compounds a main choice?
+        <em>Open Linguistics</em>, 7(1), 116–135. De Gruyter.
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">16</span>
+
+      <p>
+        <strong>Stamou, V., Xylogianni, A., Malli, M., Takorou, P.,
+        &amp; Markantonatou, S.</strong>
+        2021. Evaluation of Verb Multiword Expressions discovery measurements
+        in literature corpora of Modern Greek.
+        <em>EURALEX XIX.</em>
+      </p>
+
+    </article>
+
+
+    <article class="publication">
+
+      <span class="publication-number">17</span>
+
+      <p>
+        <strong>Markantonatou, S., Stamou, V., Bompolas, S.,
+        Anastasopoulou, K., Vasileiadi-Linardaki, I.,
+        Diamantopoulos, K., &amp; Kazos, Y.</strong>
+        GUD: a new Modern Greek treebank enriched with VMWE annotations.
+        <em>In press.</em>
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PROJECTS
+     ============================================================ -->
+
+<section id="projects" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>Projects &amp; Installations</h2>
+
+    <span class="section-number">
+      05 — PROJECTS
+    </span>
+
+  </div>
+
+
+  <p style="max-width:700px;font-size:18px;line-height:1.5;">
+
+    Please visit the
+    <a
+      href="https://www.goethe.de/prj/eai/en/"
+      target="_blank"
+      rel="noopener"
+    >
+      Goethe Institut project page
+    </a>
+    for more information.
+
+  </p>
+
+
+  <div class="project-feature">
+
+    <div class="project-image">
+
+      <img
+        src="images/dalle_bb.jpg"
+        alt="Blackbox AI installation"
+      >
+
+    </div>
+
+
+    <div class="project-copy">
+
+      <h3>
+        Blackbox<br>
+        AI
+      </h3>
+
+      <p>
+
+        Multimodal installation exploring gender bias
+        in artificial intelligence.
+
+      </p>
+
+      <a
+        href="blackboximages.html"
+        target="_blank"
+        rel="noopener"
+        class="button"
+      >
+        View project
+      </a>
+
+      <div class="project-note">
+        looking inside the machine
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     TALKS
+     ============================================================ -->
+
+<section id="talks" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>Talks</h2>
+
+    <span class="section-number">
+      06 — PRESENTATIONS
+    </span>
+
+  </div>
+
+
+  <div class="entry-list">
+
+    <article class="entry">
+
+      <span class="entry-number">
+        01
+      </span>
+
+      <p>
+        <em>Title of talk</em>
+        — Event name, location, year.
+      </p>
+
+    </article>
+
+
+    <article class="entry">
+
+      <span class="entry-number">
+        02
+      </span>
+
+      <p>
+        <em>Title of talk</em>
+        — Event name, location, year.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PRESS
+     ============================================================ -->
+
+<section id="press" class="editorial-section">
+
+  <div class="section-heading">
+
+    <h2>Press</h2>
+
+    <span class="section-number">
+      07 — IN THE MEDIA
+    </span>
+
+  </div>
+
+
+  <div class="entry-list">
+
+    <article class="entry">
+
+      <span class="entry-number">
+        01
+      </span>
+
+      <p>
+
+        <a
+          href="https://example.com"
+          target="_blank"
+          rel="noopener"
+        >
+          Outlet name
+        </a>
+
+        — Short description of coverage (year).
+
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     CONTACT
+     ============================================================ -->
+
+<section id="contact" class="contact">
+
+  <div class="section-heading">
+
+    <h2>Contact</h2>
+
+    <span class="section-number">
+      08 — SAY HELLO
+    </span>
+
+  </div>
+
+
+  <div class="contact-content">
+
+    <p>
+
+      If you would like to collaborate,
+      please reach out by email or connect
+      on GitHub.
+
+    </p>
+
+
+    <div class="contact-links">
+
+      <a href="mailto:your.email@example.com">
+        EMAIL
+      </a>
+
+      <a
+        href="https://github.com/vistamou"
+        target="_blank"
+        rel="noopener"
+      >
+        GITHUB
+      </a>
+
+      <a
+        href="https://twitter.com/vivstamou"
+        target="_blank"
+        rel="noopener"
+      >
+        TWITTER
+      </a>
+
+      <a
+        href="https://scholar.google.com/citations?user=1Cbtm_MAAAAJ&hl=el"
+        target="_blank"
+        rel="noopener"
+      >
+        GOOGLE SCHOLAR
+      </a>
+
+      <a
+        href="https://orcid.org/"
+        target="_blank"
+        rel="noopener"
+      >
+        ORCID
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div class="footer-copy">
+
+      <strong>Vivian Stamou, PhD</strong>
+
+      <br>
+
+      Postdoctoral Researcher in Natural Language Processing
+
+      <br>
+
+      Archimedes AI · Athena Research Center
+
+    </div>
+
+
+    <div class="footer-meta">
+
+      VIVIAN STAMOU / ATHENS
+
+      <br>
+
+      © 2026
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+</body>
+
+</html>
+```
